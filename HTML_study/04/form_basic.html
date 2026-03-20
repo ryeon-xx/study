@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- method 속성 : 입력 양식에 입력한 데이터를 전달하는 방식 -->
+    <!-- action 속성 : 입력 양식에 입력한 데이터를 전달하는 장소 -->
+    <!-- <form> 태그 : 입력 양식의 시작과 끝 표시 -->
+    <form>
+    <!-- <input> 태그 -->
+    <!-- 속성 -->
+    <!-- text : 글자 입력 양식 생성 -->
+    <!-- submit : 제출 버튼 생성 -->
+        <input type="text" name="search">
+        <input type="submit">
+    </form>
+
+    <!-- GET 방식 : 주소에 데이터를 입력해서 전달, 크기가 한정됨 -->
+    <!-- POST 방식 : 주소를 변경하지 않고 비밀스럽게 데이터를 전달, 용량 제한 X -->
+
+    <form>
+        <input type="text" name="text" value="text"><br>
+        <!-- password : 비밀번호 입력 양식 생성 -->
+        <input type="password" name="password" value="password"><br>
+        <!-- file : 파일 입력 양식 생성 -->
+        <input type="file" name="file" value="file"><br>
+        <!-- checkbox : 체크박스 생성 -->
+        <input type="checkbox" name="checkbox" value="checkbox"><br>
+        <!-- radio : 라디오 버튼 생성 -->
+        <input type="radio" name="radio" value="radio"><br>
+        
+        <br>
+        <!-- hidden : 해당 내용 표시 안 함 -->
+        <input type="hidden" name="hidden" value="hidden"><br>
+        <br>
+        
+        <hr>
+        <br>
+        <!-- button : 버튼 생성 -->
+        <input type="button" value="botton"><br>
+        <!-- reset : 초기화 버튼 생성 -->
+        <input type="reset" value="reset"><br>
+        <!-- submit : 제출 버튼 생성 -->
+        <input type="submit" value="submit"><br>
+        <!-- image : 이미지 형태 생성 -->
+        <input type="image" src="https://placehold.co/100x100"><br>
+        <br>
+</body>
+</html>
