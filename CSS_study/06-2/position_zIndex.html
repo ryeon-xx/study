@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* z-index 속성 : 요소의 앞/뒤 순서를 변경 
+                              정수 값 배정(큰 값일수록 앞에 배치) */
+                              
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        .box:nth-child(1) {
+            background-color: lightcoral;
+            left: 10px;
+            top: 10px;
+            z-index: 100;
+        }
+        .box:nth-child(2) {
+            background-color: lightsalmon;
+            left: 50px;
+            top: 50px;
+            z-index: 10;
+        }
+        .box:nth-child(3) {
+            background-color: lightcyan;
+            left: 90px;
+            top: 90px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>
