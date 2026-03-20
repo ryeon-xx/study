@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 아이디 선택자 : 특정 id 속성이 있는 태그 선택.
+                           웹 표준에 id 속성은 웹 페이지 내부에서 중복되면
+                           안 된다는 규정이 있으므로 아이디 선택자는 
+                           특정 태그 하나를 선택할 때 사용 */
+        #header {
+            width: 800px;
+            margin: 0 auto;
+            background-color: pink;
+        }
+        #wrap {
+            width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #aside {
+            width: 200px;
+            float: left;
+            background-color: skyblue;
+        }
+        #content {
+            width: 600px;
+            float: left;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>#header 태그</h1>
+    </div>
+    <div id="wrap">
+        <div id="aside">
+            <h1>#aside 태그</h1>
+        </div>
+        <div id="content">
+            <h1>#content 태그</h1>
+        </div>
+    </div>
+</body>
+</html>
