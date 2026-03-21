@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 기본 이벤트 제거
+
+        // 이벤트를 연결합니다.
+        window.onload = function() {
+            // 문서 객체 선택
+            let button = document.getElementById('button');
+
+            // 이벤트를 연결합니다.
+            button.onclick = function() {
+                // 기본 이벤트를 제거합니다.
+                // false를 리턴하면 기본 이벤트 핸들러 호출되지 않음.
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <a id="button" href="http://hanbit.co.kr">버튼</a>
+</body>
+</html>

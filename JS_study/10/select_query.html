@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // querySelector() 메서드를 이용해 문서 객체 1개 선택하기
+        // 이벤트를 연결합니다.
+        window.onload = function() {
+            // 문서 객체를 선택합니다.
+            let header = document.querySelector('h1');
+
+            // 문서 객체를 조작합니다.
+            header.style.color = 'white';
+            header.style.backgroundColor = 'lightgreen';
+            header.innerHTML = 'From JavaScript';
+        };
+    </script>
+</head>
+<body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+</body>
+</html>
