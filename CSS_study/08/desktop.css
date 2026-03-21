@@ -1,0 +1,7 @@
+/* description.html로 연결 */
+
+@media screen and (min-width:960px) {
+    body {
+        background-color: lightgreen;
+    };
+};

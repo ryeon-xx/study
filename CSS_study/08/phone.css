@@ -1,0 +1,7 @@
+/* description.html로 연결 */
+
+@media screen and (max-width:767px) {
+    body {
+        background-color: pink;
+    };
+};
