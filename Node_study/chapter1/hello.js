@@ -12,7 +12,7 @@ hello('홍길동');
 // 패키지 삭제하기 : npm uninstall ansi-colors
 
 const c = require('ansi-colors');
-
+g
 function hi(username) {
     console.log(c.green(username) + '님, 안녕하십니까?');   
 };
