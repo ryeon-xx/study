@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- One True 정렬 레이아웃 -->
+    <style>
+        body {
+            width: 500px;
+            margin: 10px auto;
+        }
+        #top {
+            background-color: lightgreen;
+        }
+        #bottom {
+            background-color: lightslategrey;
+        }
+        #middle {
+            overflow: hidden;
+        }
+        #left {
+            background-color: lightpink;
+            width: 150px;
+            float: left;
+        }
+        #right {
+            background-color: lightskyblue;
+            width: 350px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="top">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Cras ac urna vitae dolor pulvinar facilisis eget ac risus.
+        Phasellus gravida nonaugue vitae rutrum. Ut vitae ligula lore.
+        Suspendisse gravida egestas faucibus.
+    </div>
+    <div id="middle">
+        <div id="left">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+        <div id="right">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Cras ac urna vitae dolor pulvinar facilisis eget ac risus.
+            Phasellus gravida non augur vitae rutrum. Ut vitae ligula lorem.
+            Suspendisse gravida egestas faucibus.
+        </div>
+    </div>
+    <div id="bottom">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Cras ac urna vitae dolor pulvinar facilisis eget ac risus.
+        Phasellus gravida nonaugue vitae rutrum. Ut vitae ligula lore.
+        Suspendisse gravida egestas faucibus.
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 요소를 고정 위치에 배치 */
+        .container {
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+        .top_bar {
+            background-color: skyblue;
+            /* fixed : 고정 */
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            height: 50px;
+        }
+        .left_bar {
+            background-color: pink;
+            position: fixed;
+            left: 0;
+            top: 50px;
+            bottom: 0;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top_bar"></div>
+    <div class="left_bar"></div>
+    <div class="container">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Cras ac urna vitae dolor pulvinar facilisis eget ac risus.
+        Phasellus gravida nonaugue vitae rutrum. Ut vitae ligula lore.
+        Suspendisse gravida egestas faucibus.
+    </div>
+</body>
+</html>

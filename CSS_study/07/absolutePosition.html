@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* absolute position */
+        #container {
+            width: 500px;
+            height: 300px;
+            border: 3px solid black;
+            overflow: hidden;
+            position: relative;
+        }
+        .circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        #pink {
+            background-color: pink;
+            left: 20px;
+            top: 20px;
+        }
+        #lightgreen {
+            background-color: lightgreen;
+            right: 20px;
+            top: 20px;
+        }
+        #skyblue {
+            background-color: skyblue;
+            right: 20px;
+            bottom: 20px;
+        }
+        #lightyellow {
+            background-color: lightyellow;
+            left: 20px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dummy Text</h1>
+    <div id="container">
+        <div id="pink" class="circle"></div>
+        <div id="lightgreen" class="circle"></div>
+        <div id="skyblue" class="circle"></div>
+        <div id="lightyellow" class="circle"></div>
+    </div>
+    <h1>Dummy Text</h1>
+</body>
+</html>
