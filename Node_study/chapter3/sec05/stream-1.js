@@ -1,0 +1,59 @@
+/*
+    스트림(stream)
+    - 한 곳에서 다른 곳으로 데이터가 이동하는 것, 데이터의 흐름
+
+    리더블 스트림
+    : 데이터를 읽기 위한 스트림. 네트워크로 연결해서 데이터를 읽어 오거나 파일에서 데이터를 읽어올 때 사용
+    라이터블 스트림
+    : 데이터를 쓰기 위한 스트림. 네트워크에 연결한 상태에서 데이터를 기록하거나 파일에 데이터를 기록할 때 사용
+    듀플렉스 스트림
+    : 읽기와 쓰기 모두 가능한 스트림. 리더블 스트림과 라이터블 스트림을 결합한 형태로 실시간 양방향 통신에 사용
+
+    리더블 스트림(readabl stream) - fs.createReadStream(경로, [인코딩, 옵션])
+    - 경로
+    - 옵션
+      : flags : 기본값 r
+      : encoding : 인코딩 방식, 기본값 null
+      : fd : 이미 열린 파일의 번호, 지정되면 파일 열기 생략, 기본값 null
+      : mode : 사용자 접근 모드. 기본값 0o666
+      : autoClose : 읽기가 끝난 후 파일을 자동으로 닫을지 여부. 기본값 true
+      : start : 읽기 시작 위치 지정
+      : end : 어디까지 읽을지 지정. 기본값 infinity
+
+      이벤트
+      data : 데이터를 읽을 수 있을 때마다 발생하는 이벤트.
+             스트림에서 읽은 데이터를 처리할 때 data 이벤트를 사용
+      end : 스트림에서 데이터를 모두 읽었을 때 발생하는 이벤트.
+            데이터를 모두 읽었다는 사실을 인지하고 이후 작업이 필요할 때 사용
+      error : 스트림에서 오류가 생겼을 때 발생하는 이벤트
+
+      이벤트 처리
+      .on('이벤트', 콜백)
+
+
+      라이터블 스트림 (writable stream) - 데이터를 기록하는 스트림
+      fs.createWriteStream(경로, 내용, [옵션])
+        - 경로
+        - 옵션
+         : flags : 기본값 w
+         : encoding : 인코딩 방식, 기본값 null
+         : fd : 이미 열린 파일의 번호, 지정되면 파일 열기 생략, 기본값 null
+         : mode : 사용자 접근 모드. 기본값 0o666
+         : autoClose : 읽기가 끝난 후 파일을 자동으로 닫을지 여부. 기본값 true
+         : start : 쓰기 시작 위치 지정
+*/
+
+const fs = require('fs');
+
+const rs = fs.createReadStream('./readMe.txt');
+
+rs.on('data',(chunk) => {
+    console.log('new chunk received : ');
+    console.log(chunk.length, chunk);
+})
+.on('end', () => {
+    console.log('finished reading data');
+})
+.on('error', (err) => {
+    console.error(`Error reading the file : ${err}`);
+});
