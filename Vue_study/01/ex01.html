@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Vue.js란? -->
+    <!-- 
+        MVVM 패턴
+        Model - View - ViewModel
+        애플리케이션 로직과 UI의 분리를 위해 설계된 패턴
+        - View : HTML과 CSS로 작성
+        - ViewModel : View의 실제 논리 및 데이터 흐름 담당
+    -->
+
+    <!-- 
+        가상 DOM
+        브라우저 메모리에서 관리하는 DOM에 대한 추상 객체
+        빠른 UI 렌더링 성능을 제공
+        - 브라우저 DOM은 화면에 그리는 직접 그리는 작업을 수행
+        - 가상 DOM은 변경된 부분을 탐지하는 것이 목적
+    -->
+</head>
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+
+    <script>
+        let model = { message : "Hello Vue3!" };
+        let vm = Vue.createApp({
+            name : "App",
+            data() {
+                return model;
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
