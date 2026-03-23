@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- v-bind 디렉티브 -->
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-bind:value="message">
+        <br>
+        <!-- 축약 표현 : v-bind:src -> :src -->
+        <img v-bind:src="imagePath">
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+
+    <script>
+        let vm = Vue.createApp({
+            name : "App",
+            data() {
+                return {
+                    message : "v-bind 디렉티브",
+                    imagePath : "https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F416%2F2025%2F06%2F03%2F0000314326_001_20250603153909862.jpg&type=a340"
+                };
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
