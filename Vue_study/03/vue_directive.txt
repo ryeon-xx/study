@@ -78,3 +78,58 @@ v-show
 
 
 
+v-if
+- 조건에 부합되지 않을 경우 요소를 생성하지 않음(화면 출력 없음)
+
+
+
+v-else, v-else-if
+- v-if와 함께 사용
+- if 문의 else, else if에 해당
+
+
+
+v-for
+- 반복적인 데이터를 렌더링
+- 형식(배열 사용시)
+    : <태그명 v-for="변수 in 배열" :key="id값"
+
+
+
+
+v-for
+- 형식(객체 사용시)
+    : <태그명 v-for="(val,key) in 객체" :key="key">
+
+
+
+v-for
+- 인덱스 번호가 필요한 경우
+
+- 형식(배열 사용시)
+    : <태그명 v-for="(contact, index) in contacts" ...>
+
+- 형식(객체 사용시)
+    : <태그명 v-for="(val,ket,index) in regions" ...>
+
+
+
+
+여러 요소를 묶어서 반복 렌더링하기
+<template> 요소에 v-for 디렉티브 사용
+    : <template v-for="...">
+
+
+
+
+Proxy 객체
+- 데이터의 변경사항을 감시하며, 값 변경 시 렌더링을 다시하도록 유도
+- Vue 인스턴스의 data 옵션으로 지정한 객체
+- data로 지정된 객체는 모두 proxy로 래핑됨
+
+
+
+
+Proxy로 래핑된 data
+- vm.contacts 수정시 다시 렌더링 됨
+- 일반 객체 model.contacts는 수정해도 다시 렌더링 되지 않음.
