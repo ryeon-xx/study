@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button 
+        :style="style1"
+        @mouseover.stop="overEvent"
+        @mouseout.stop="outEvent"
+        >테스트</button>
+    </div>
+    
+    <script src="https://unpkg.com/vue"></script>
+
+    <script>
+        let vm = Vue.createApp({
+            name : "App",
+            data() {
+                return {
+                    style1: {
+                        backgroundColor : "pink",
+                        color: "white",
+                    },
+                };
+            },
+            methods: {
+                overEvent() {
+                    this.style1.backgroundColor = "skyblue";
+                    this.style1.color = "white";
+                },
+                outEvent() {
+                    this.style1.backgroundColor = "pink";
+                    this.style1.color = "white";
+                },
+            },
+        }).mount('#app');
+    </script>
+</body>
+</html>
