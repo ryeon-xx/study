@@ -43,3 +43,50 @@ vm.$data -> data 옵션으로 구성된 proxy 객체
 - Vue 인스턴스에서 사용할 메서드를 등록하는 옵션
 - 인스턴스에서 직접 호출하거나, 디렉티브의 표현식, {{}}의 표현식에서 호출 가능
 - 이벤트 핸들러로 이용가능
+
+
+
+watch 옵션 객체로 정의
+- 함수로 정의
+- data 속성명과 동일하게 함수명 정의
+- 매개변수
+   - 첫 번째 인자 : 변경 후의 값
+   - 두 번째 인자 : 변경 전의 값
+
+x ( current, old ) {
+    console.log(`## x : ${old} --> ${current}`)
+    var result = Number(current) + Number(this.y);
+    if(isNaN(result)) this.sum = 0;
+    else this.sum = result;
+}
+여기서 
+x : data 또는 속성명
+current : 변경 후 x 값
+old : 변경 전 x 값
+
+
+
+컴포넌트 생명주기 메서드
+beforeCreate : 인스턴스가 초기화된 후, 데이터에 대한 관찰 기능, 이벤트가 설정되기 전에 동기적으로 호출
+
+created : 인스턴스 생성이 완료된 후 동기적으로 호출됨.
+          데이터 관찰 기능, 계산된 속성, 메서드, 이벤트 초기화 등이 모두 완료된 상태임
+
+beforeMount : 마운팅이 시작되기 직전에 호출됨.
+
+mounted : mount()에 의해 컴포넌트 인스턴스가 HTML Document의 요소에 마운트된 후에 호출
+
+beforeUpdate : 데이터가 변경되고 DOM이 패치되기 전에 호출됨.
+
+updated : 데이터의 변경으로 가상 DOM이 다시 렌더링되고 패치된 후에 호출됨
+          컴포넌트의 DOM이 업데이트 된 상태로 DOM에 종속성이 있는 처리를 이 단계에서 수행
+
+beforeUnmount : 컴포넌트 인스턴스가 언마운트되기 직전에 호출됨.
+
+unmounted : 컴포넌트의 인스턴스가 언마운트된 후에 호출됨.(자식도 모두 언마운트된 상태임)
+            컴포넌트의 모든 디렉티브들의 연결이 해제되고, 모든 이벤트 리스너가 제거됨
+
+errorCaptured : 컴포넌트의 자식 컴포넌트 트리에서 오류가 발생하면 컴포넌트 트리를 거슬러 올라와서
+                이 메서드가 실행됨. 컴포넌트 자신에서 발생한 오류는 잡아내지 못함.
+
+created, mounted, unmounted 중요?
