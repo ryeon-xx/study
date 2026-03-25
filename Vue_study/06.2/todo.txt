@@ -1,0 +1,23 @@
+데이터 정의
+- todo : 텍스트 박스에 사용자가 입력하는 내용을 받기 위한 data
+- todolist : 추가한 todo들의 목록, todo 한 건은 다음과 같음
+    - id : todo 한 건의 고유키, 여기서는 timestamp를 이용
+    - todo : todo 내용
+    - completed 완료 여부 true/false
+
+
+
+메서드 정의
+- addTodo : 텍스트 박스에 할 일(todo)를 입력하고 엔터를 누르거나 추가 버튼을 누른 경우
+            todolist에 새로운 todo를 추가
+- deleteTodo : 삭제 버튼을 클릭하면 해당 id의 할 일(todo)를 찾아서 삭제
+- toggleCompleted : 할 일(todo) 한 건을 클릭하면 해당 id의 completed 값을 토글
+
+
+
+
+템플릿 작성
+- 스크립트 data와 템플릿 간의 바인딩
+    - 데이터 바인딩
+    - 이벤트 바인딩
+    - 스타일 바인딩
