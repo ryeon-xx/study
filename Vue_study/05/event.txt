@@ -57,3 +57,52 @@
 
 
 
+버블링의 차단
+- event.stopPropagation() 호출
+
+관련 수식어
+- .stop : 이벤트 전파 중단, event.stopPropagation() 호출과 동일
+- .capture : CAPTURING_PHASE 단계에서만 이벤트 발생
+- .self: RASING_PHASE 단계일 때만 이벤트 발생
+
+
+
+
+once 수식어
+- 모든 이벤트에 연결가능
+- 한 번만 이벤트를 발생시키고 이벤트 연결을 해제
+
+
+
+키코드 관련 이벤트 수식어
+- 키 관련 수식어
+    - up, down, left, right
+    - enter, esc
+    - space, tab, delete
+    - ctrl, alt, shift, meta
+
+- @이벤트.enter="..."
+    - 엔터를 쳤을 때 이벤트 핸들러 호출
+
+- @keyup.ctrl.enter="..."
+    - Ctrl + Enter 조합 시 이벤트 핸들러 호출
+
+- @keyup.ctrl.c="..."
+    - ctrl + c 조합
+
+
+
+마우스 관련 수식어
+수식어
+- left, right, middle : 마우스 버튼
+- 키 관련 수식어 사용 가능
+
+
+
+exact 수식어
+- 다른 수식어와 조합해 이벤트를 등록할 때
+    -> 정확하게 일치하는 조합으로 이벤트가 일어나야 핸들러가 실행되도록 설정
+
+<button @click.exact = "num = num + 1"
+        @click.exact = "num = num + 10"
+        @click.exact = "num = num + 100">
