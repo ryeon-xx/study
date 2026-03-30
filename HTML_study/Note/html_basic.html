@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+    1. 루트 경로 (Root Path)
+
+    형식
+
+    /폴더/파일
+    
+    예시
+    background-img: url('/day02/assets/Desert.jpg');
+
+    설명
+    / -> 사이트 root 기준
+
+    예 폴더 구조
+    project
+      └ day02
+        └ assets
+           └ Desert.jpg
+
+    루트 기준으로 접근
+
+    / day02 / assets / Desert.jpg
+
+    특징
+
+    어디서 호출해도 동일한 위치를 가리킴
+    다른 파일에서 참조하려 해도 같은 경로
+    
+-->
+
+<!-- ======================================================================================= -->
+
+<!-- 
+    2. 상대 경로
+
+    형식
+    
+    폴더/파일
+
+    예
+    background-image: url('assets/Desert.jpg');
+
+    설명
+
+    현재 파일 기준
+
+    예 폴더 구조
+
+    day02
+      ├ index.html
+        └ assets
+          └ Desert.jpg
+
+    현재 위치
+    index.html
+
+    -> assets 폴더 접근
+
+    특징
+    
+    현재 파일 위치 기준으로 경로가 결정됨.
+-->
+
+<!-- ============================================================================== -->
+
+<!-- 
+    정리
+
+    url('/day02/assets/Desert.jpg')
+    → 루트 경로 (사이트 root 기준)
+
+    url('assets/Desert.jpg')
+    → 상대경로 (현재 파일 기준)
+
+-->
+
+    <h1>글자 관련 태그</h1>    
+
+    <hr>
+
+    <h1>h1 태그입니다.</h1>
+    <h2>h2 태그입니다.</h2>
+    <h3>h3 태그입니다.</h3>
+    <h4>h4 태그입니다.</h4>
+    <h5>h5 태그입니다.</h5>
+    <h6>h6 태그입니다.</h6>
+
+    <hr>
+
+    <h3>단락을 구분하는 태그</h3>
+    <p>첫 번째 단락입니다.</p>
+    <p>두 번째 단락입니다.</p>
+
+    <hr>
+
+    <h3>문단을 나누는 태그</h3>
+    <p>
+        문단 영역을 나누는 태그로 p 태그와 pre 태그가 있다. <br>
+        p태그는 문단영역을 나누는 태그지만 한 개의 공백만 표시하며, 줄바꿈 입력을<br>
+        별도의 태그로 지정해주어야 한다.
+    </p>
+
+    <pre>
+        pre 태그는 여러칸 띄우기      혹은 줄바꿈을 포함하여 입력한
+        내용 그대로 표현하는 태그이다.
+    </pre>
+
+    <hr>
+
+    <h3>a(anchor) 태그를 이용한 하이퍼링크 테스트</h3>
+    <ul>
+        <li><a href="https://www.naver.com" target="_blank">네이버</a></li>
+        <li><a href="https://www.naver.com" target="_self">네이버</a></li>
+        <li><a href=""></a></li>
+    </ul>
+
+    <hr>
+    <h3 id="menu">한 페이지 내에서 점프하는 앵커 만들기</h3>
+    <ul>
+        <li><a href="#text1">본문내용1</a></li>
+        <li><a href="#text2">본문내용2</a></li>
+        <li><a href="#text3">본문내용3</a></li>
+    </ul>
+
+    <h4 id="text1">본문내용 1</h4>
+    <p>
+        동해물과 백두산이 마르고 닳도록 <br>
+        하느님이 보우하사 우리나라 만세 <br>
+        무궁화 삼천리 화려강산 <br>
+        대한 사람 대한으로 길이 보전하세
+    </p>
+    
+    <br>
+    <a href="#menu">메뉴로 돌아가기</a>
+
+    <br>
+    <h4 id="text2">본문내용2</h4>
+    <p>
+        남산 위에 저 소나무 철갑을 두른 듯 <br>
+        바람 서리 불변함은 우리 기상일세 <br>
+        무궁화 삼천리 화려강산 <br>
+        대한 사람 대한으로 길이 보전하세
+    </p>
+
+    <br>
+
+    <a href="#menu">메뉴로 돌아가기</a>
+
+    <br>
+    <h4 id="text3">본문내용 3</h4>
+    <p>
+        가을 하늘 공활한데 높고 구름 없이 <br>
+        밝은 달은 우리 가슴 일편단심일세 <br>
+        무궁화 삼천리 화려강산 <br>
+        대한 사람 대한으로 길이 보전하세
+    </p>
+
+    <br>
+
+    <a href="#menu">메뉴로 돌아가기</a>
+
+    <br>
+    <br>
+
+    <strong>글자를 굵게 표시하는 태그</strong>
+    <p>
+        strong 태그 설명 : 스크린 리더와 같이 시각장애인에게 필요한 기능이 있어서 <br>
+                            같은 굵은 표시라고 해도 strong 태그로 감싸져 있으면 <br>
+                            억양을 쎄게 읽어준다.
+    </p>
+
+    <br>
+    <b>글자를 굵게 표시하는 태그</b>
+    <br>
+    <em>글자를 기울이는 태그</em>
+    <br>
+    <mark>형광펜 효과를 나타내는 태그</mark>
+    <br>
+    <u>글자에 밑줄을 긋는 태그</u>
+    <br>
+    <small>글자를 작게 표시하는 태그</small>
+    <br>
+
+
+<!-- 
+    이동할 경로 (URL)를 지정한다.
+    * 외부 링크
+    예 : 
+    https://www.google.com
+    
+    * 내부 링크 (같은 페이지)
+    # 아이디 값
+
+    예 :
+    <a href="#alpha"> 
+-->
+
+    <div>div 태그 - block 형식</div>
+    <div>div 태그 - block 형식</div>
+    <div>div 태그 - block 형식</div>
+    <div>div 태그 - block 형식</div>
+    <div>div 태그 - block 형식</div>
+
+    <br>
+
+    <span>span 태그 - inline 형식</span>
+    <span>span 태그 - inline 형식</span>
+    <span>span 태그 - inline 형식</span>
+    <span>span 태그 - inline 형식</span>
+    <span>span 태그 - inline 형식</span>
+</body>
+</html>
