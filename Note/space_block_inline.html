@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 레이아웃 스타일 실습</title>
+
+    <style>
+        /* 
+            ========================================
+            CSS 레이아웃 기본 개념
+            ========================================
+
+            1. width / height
+            요소의 가로와 세로 크기를 지정
+
+            width -> 가로 크기
+            height -> 세로 크기
+
+            단위
+            px -> 고정 크기
+            % -> 부모 요소 기준 크기
+
+            ========================================
+            2. display 속성
+            ========================================
+            display 속성은 HTML 요소가 화면에서 어떤 방식으로 배치될지를 결정하는 CSS 속성
+
+            display 값 종류
+
+            none
+            -> 화면에 보이지 않음
+            -> 자리도 차지하지 않음
+
+            block
+            -> 한 줄 전체 사용
+            -> width / height 지정 가능
+            예 : div, p, h1
+
+            inline
+            -> 내용 크기만큼만 차지
+            -> width / height 적용 안됨
+            예 : span, a
+
+            inline-block
+            -> inline처럼 옆으로 배치
+            -> block 처럼 width / height 지정 가능
+
+            flex
+            -> 부모 요소에 적용
+            -> 자식 요소들을 가로로 정렬
+            -> 정렬 제어가 쉬움
+
+            정리
+
+            block         : 한 줄 전체
+            inline        : 글자처럼 배치
+            inline-block  : 옆으로 배치 + 크기 지정 가능
+            flex          : 정렬 레이아웃
+            none          : 화면에서 숨김
+
+            ========================================
+            3. flex에서 많이 사용하는 속성
+            ========================================
+
+            display: flex;
+            -> 부모 요소를 flex container 로 만든다.
+            -> 안쪽 자식 요소들이 가로 방향으로 배치된다.
+
+            justify-content
+            -> 가로 방향 정렬
+            -> 자식 요소들을 좌우로 어떻게 배치할지 정함
+
+            자주 사용하는 값
+            flex-start : 왼쪽 정렬
+            center     : 가운데 정렬
+            space-between : 양쪽 끝 정렬 + 사이 간격 균등
+
+            align-items
+            -> 세로 방향 정렬
+            -> 자식 요소들을 위아래로 어떻게 배치할지 정함
+
+            자주 사용하는 값
+            flex-start : 위쪽 정렬
+            center     : 세로 가운데 정렬
+            flex-end   : 아래쪽 정렬
+
+            정리
+            justify-content : 가로 정렬
+            align-items     : 세로 정렬
+
+            주의
+            justify-content와 align-items는
+            부모 요소에 적용해야 한다.
+        */
+
+
+        /* 공통 박스 */
+        .box {
+            border: 2px solid black;
+            width: 120px;
+            height: 80px;
+            margin: 5px;
+            text-align: center;
+            line-height: 80px;
+        }
+
+
+        /* 
+            =============================
+            width / height 실습
+            =============================
+        */
+        .fixed {
+            width: 200px;
+            height: 80px;
+            background-color: skyblue;
+        }
+        .flexible {
+            width: 50px;
+            height: 80px;
+            background-color: lightgreen;
+        }
+
+
+        /* 
+            =============================
+            display:inline
+            =============================
+        */
+        .inline-test div{
+            display: inline;
+            background-color: orange;
+        }
+
+
+        /* 
+            =============================
+            display:inline-block
+            =============================
+        */
+        .inline-block-test div{
+            display: inline-block;
+            background-color: pink;
+        }
+
+
+        /* 
+            =============================
+            display:block
+            =============================
+        */
+        .block-test span {
+            display: block;
+            background-color: yellow;
+        }
+
+
+        /* 
+            =============================
+            display:none
+            =============================
+        */
+        .hide {
+            display: none;
+        }
+
+
+        /* 
+            =============================
+            flex
+            =============================
+        */
+        .flex-container {
+            display: flex;
+            border: 2px solid black;
+        }
+
+        .flex-container div {
+            background-color: lightgray;
+        }
+
+
+        /* 
+            =============================
+            justify-content 실습
+            =============================
+        */
+        .flex-jc {
+            display: flex;
+            border: 2px solid black;
+            height: 120px;
+            justify-content: center;
+            /* 가로 방향 가운데 정렬 */
+        }
+        .flex-jc div{
+            background-color: lavender;
+        }
+
+
+        /* 
+            =============================
+            align-items 실습
+            =============================
+        */
+
+        .flex-ai {
+            display: flex;
+            border: 2px solid black;
+            height: 200px;
+            align-items: center;
+            /* 세로 방향 가운데 정렬 */
+        }
+
+        .flex-ai div{
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+<h1>CSS 레이아웃 스타일 실습</h1>
+
+<!-- ============================= -->
+<h3>1 width / height</h3>
+<p>요소의 크기를 지정하는 속성</p>
+
+<p>고정 크기</p>
+<div class="box fixed">fixed</div>
+
+<p>가변 크기 (부모 기준)</p>
+<div class="box flexible">50%</div>
+
+
+
+<!-- ============================= -->
+<h3>2 display:inline</h3>
+
+<p>
+block 요소를 inline으로 변경하면<br>
+요소들이 옆으로 배치되며 width / height가 무시됨
+</p>
+
+<div class="inline-test">
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+</div>
+
+
+
+<!-- ============================= -->
+<h3>3 display:inline-block</h3>
+
+<p>
+inline처럼 옆으로 배치되지만<br>
+width / height 지정 가능
+</p>
+
+<div class="inline-block-test">
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+</div>
+
+
+
+<!-- ============================= -->
+<h3>4 display:block</h3>
+
+<p>
+inline 요소를 block으로 변경하면<br>
+한 줄 전체를 차지
+</p>
+
+<div class="block-test">
+<span class="box">1</span>
+<span class="box">2</span>
+<span class="box">3</span>
+</div>
+
+
+
+<!-- ============================= -->
+<h3>5 display:none</h3>
+
+<p>
+요소가 화면에서 사라지고 자리도 없어짐
+</p>
+
+<div>
+<div class="box">1</div>
+<div class="box hide">2 (숨김)</div>
+<div class="box">3</div>
+</div>
+
+
+
+<!-- ============================= -->
+<h3>6 display:flex</h3>
+
+<p>
+부모에 flex를 적용하면<br>
+자식 요소들이 가로로 정렬됨
+</p>
+
+<div class="flex-container">
+<div class="box">1</div>
+<div class="box">2</div>
+<div class="box">3</div>
+</div>
+
+<!-- ============================= -->
+<h3> justify-content</h3>
+
+<p>
+가로 방향 정렬<br>
+현재는 가운데 정렬(center)
+</p>
+
+<div class="flex-jc">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+</div>
+
+<p>
+실습해보기<br>
+justify-content 값을 아래처럼 바꿔보기<br>
+flex-start / center / space-between
+</p>
+
+
+
+<!-- ============================= -->
+<h3> align-items</h3>
+
+<p>
+세로 방향 정렬<br>
+현재는 세로 가운데 정렬(center)
+</p>
+
+<div class="flex-ai">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+</div>
+
+<p>
+실습해보기<br>
+align-items 값을 아래처럼 바꿔보기<br>
+flex-start / center / flex-end
+</p>
+
+
+</body>
+</html>
